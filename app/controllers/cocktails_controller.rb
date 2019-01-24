@@ -4,9 +4,13 @@ class CocktailsController < ApplicationController
 
   def index
     @cocktails = Cocktail.all
+    # @cocktail_names = Cocktail.pluck(:name)
+    # create_json
   end
 
   def show
+    # @doses = @cocktail.doses
+    # @dose = Dose.new
   end
 
   def new

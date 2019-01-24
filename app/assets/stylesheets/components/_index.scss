@@ -1,3 +1,34 @@
 // Import your components CSS files here.
 @import "alert";
 @import "navbar";
+@import "banner";
+@import "card";
+@import "footer";
+
+.list-group-item {
+  border: none;
+  padding: 0px;
+}
+
+.list-group-item:last-child {
+  margin-bottom: 20px;
+}
+
+.wrapper {
+  background-color: white;
+}
+
+.index-title {
+  margin-bottom: 20px;
+}
+
+.ccard-image {
+  display: block;
+  margin: 0 auto;
+}
+.imageshow {
+  box-shadow: 2px 2px 2px black;
+  border-radius: 4px;
+  margin-left: 55px;
+}
+

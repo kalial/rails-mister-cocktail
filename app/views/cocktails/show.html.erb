@@ -10,49 +10,89 @@
 <ul>
 <% @cocktail.doses.each do |dose| %>
   <li> <%= dose.description %> <br> <%= dose.ingredient.name %> </li>
-
+  <%= link_to dose_path(@dose), method: :delete do %>
+  <i class="fas fa-trash"></i> <!-- https://fontawesome.com/icons?d=gallery&q=delete -->
 <% end %>
 </ul>
 
-<!--
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <div class="bordered marged">
-        <h1><%= @cocktail.name %></h1>
-        <div class="card card-lg", style="background-image: linear-gradient(135deg, rgba(255,209,148,0.6) 0%, rgba(112,225,245,0.2) 50%), url(<%= "http://res.cloudinary.com/ind-pendant/image/upload/#{@cocktail.photo.path}" %>); background-size: cover; background-position: center" >
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-6">
-      <div class="marged-lg">
-        <h1>How to make it?</h1>
-        <div class="text-center">
-          <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModalDose">
-            Add a dose
-          </button>
-        </div>
-        <div class="row">
-          <% @cocktail.doses.each do |dose| %>
-          <div class="col-xs-12 col-sm-6">
-            <div class="card" style="background-image: linear-gradient(135deg, rgba(255,209,148,0.6) 0%, rgba(112,225,245,0.2) 50%), url(<%= "http://res.cloudinary.com/ind-pendant/image/upload/#{dose.ingredient.photo.path}" %>); background-size: cover; background-position: center">
-              <div class="card-category"><%= dose.description %> of <%= dose.ingredient.name %>
-              </div>
-              <div class="link_on_link">
-                <%= link_to cocktail_dose_path(@cocktail, dose), method: :delete, data: {confirm: "Are you sure?" } do %>
-                <i class="fa fa-trash" style="font-size: 30px; color:white"></i>
-                <% end %>
-              </div>
+
+
+
+
+
+
+
+<!-- <div class="banner" id="show" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path @cocktail.photo %>');">
+  <div class="banner-content">
+    <h1> <%= @cocktail.name %> </h1>
+  </div>
+
+
+
+
+</div>
+
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <div class="ccard-wrapper">
+          <div class="ccard-title">
+            <h4>
+              <b>
+                <%= @cocktail.name.upcase %>
+              </b>
+            </h4>
+          </div>
+          <div class="ccard-video">
+            <div class="ccard-title">
+              <h6>
+                STORY
+              </h6>
+            </div>
+            <p>A <%= @cocktail.name %> is a highball cocktail made with <%= @cocktail.ingredients.first.name %> and <%= @cocktail.ingredients.last.name %> poured over ice. It is usually garnished with a slice or wedge of lime. The amount of <%= @cocktail.ingredients.first.name %> varies according to taste. Suggested ratios of <%= @cocktail.ingredients.last.name %> to <%= @cocktail.ingredients.first.name %> are between 1:1 and 1:3.</p>
+            <div class="ccard-image">
+              <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill, class: "imageshow" %>
             </div>
           </div>
-          <% end %>
+          <div class="ccard-ingredients">
+            <div class="ccard-title">
+              <h6>
+                INGREDIENTS
+              </h6>
+            </div>
+            <div class="ccard-ingredient-list">
+
+              <% @cocktail.doses.each do |dose| %>
+                <div class="ccard-ingredient">
+                  <div>
+                    <%= Ingredient.find(dose.ingredient_id).name.upcase %> <%= dose.description.upcase %>
+                   </div>
+                   <%= link_to cocktail_dose_path(@cocktail, dose), method: :delete do %>
+                   <i class="fa fa-trash"></i>
+                   <% end %>
+               </div>
+              <% end %>
+            </div>
+          </div>
+          <%= render 'doses/form', cocktail: @cocktail, dose: @dose %>
         </div>
       </div>
     </div>
   </div>
+  <%= link_to "BACK", cocktails_path, class: "btn btn-primary" %>
+
 </div>
-
-<%= render "/shared/modal_dose" %>
-<%= render "/shared/modal_ingredient" %>
-
  -->
+
+
+
+
+
+
+
+
+
+
+    <!-- <h3>Add an ingredient <%#= link_to 'here', new_cocktail_dose_path(@cocktail)%></h3>
+     -->
