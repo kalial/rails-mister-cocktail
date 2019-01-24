@@ -1,0 +1,18 @@
+<div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="from-post">
+        <h1>Add a cocktail</h1>
+          <%= simple_form_for(@cocktail) do |f| %>
+          <div class="row">
+            <div class="col-xs-6">
+              <%= f.input :name, placeholder: "Add Your Own Cocktail" %>
+              <%= f.submit "Add a new cocktail", class: "btn btn-primary"  %>
+              <% end %>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+

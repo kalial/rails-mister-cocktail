@@ -1,0 +1,58 @@
+<p>
+  <strong>Name:</strong>
+  <%= @cocktail.name %>
+</p>
+
+<%= link_to 'Home', cocktails_path %> <br>
+<%= link_to "Add a new doses", new_cocktail_dose_path(@cocktail) %>
+<p></p>
+
+<ul>
+<% @cocktail.doses.each do |dose| %>
+  <li> <%= dose.description %> <br> <%= dose.ingredient.name %> </li>
+
+<% end %>
+</ul>
+
+<!--
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="bordered marged">
+        <h1><%= @cocktail.name %></h1>
+        <div class="card card-lg", style="background-image: linear-gradient(135deg, rgba(255,209,148,0.6) 0%, rgba(112,225,245,0.2) 50%), url(<%= "http://res.cloudinary.com/ind-pendant/image/upload/#{@cocktail.photo.path}" %>); background-size: cover; background-position: center" >
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="marged-lg">
+        <h1>How to make it?</h1>
+        <div class="text-center">
+          <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModalDose">
+            Add a dose
+          </button>
+        </div>
+        <div class="row">
+          <% @cocktail.doses.each do |dose| %>
+          <div class="col-xs-12 col-sm-6">
+            <div class="card" style="background-image: linear-gradient(135deg, rgba(255,209,148,0.6) 0%, rgba(112,225,245,0.2) 50%), url(<%= "http://res.cloudinary.com/ind-pendant/image/upload/#{dose.ingredient.photo.path}" %>); background-size: cover; background-position: center">
+              <div class="card-category"><%= dose.description %> of <%= dose.ingredient.name %>
+              </div>
+              <div class="link_on_link">
+                <%= link_to cocktail_dose_path(@cocktail, dose), method: :delete, data: {confirm: "Are you sure?" } do %>
+                <i class="fa fa-trash" style="font-size: 30px; color:white"></i>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "/shared/modal_dose" %>
+<%= render "/shared/modal_ingredient" %>
+
+ -->

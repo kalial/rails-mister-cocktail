@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <div class="from-post">
+          <h1>Add a new ingredient</h1>
+            <%= simple_form_for [@cocktail, @dose] do |f| %>
+            <div class="row">
+              <div class="col-xs-6">
+                <%= f.input :description, placeholder: "Add Your Own description" %>
+                <%= f.association :ingredient, collection: Ingredient.all %>
+                <%= f.submit "Add ingredient", class: "btn btn-primary"  %>
+                <% end %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= link_to "Back to Home", cocktails_path %>
