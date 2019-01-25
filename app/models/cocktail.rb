@@ -6,4 +6,5 @@ class Cocktail < ApplicationRecord
   # validates :name, presence: true, uniqueness: true
   validates :name, uniqueness: true, length: { minimum: 1 }
   # mount_uploader :photo, PhotoUploader
+  # validates :name, uniqueness: true, presence: true, allow_blank: false
 end
