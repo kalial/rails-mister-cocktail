@@ -1,27 +1,38 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 10%), url('https://unsplash.com/photos/fXkmfjaowOw');">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.com/photos/ZiGC1Cyo8_A/download?force=true'); background-position: 3px;">
   <div class="banner-content">
-    <p>test</p>
+    <!-- <p><b>Kali Cocktails</b></p> -->
   </div>
 </div>
 
-<h1 id="cocktail_list" class="text-center">favourite cocktails</h1>
+<h1 id="cocktail_list" class="text-center">Cocktails</h1>
 <p>
   <br>
-  <div class="container">
+  <div "row justify-content-md-center" class="container">
     <div class="row">
       <ul>
         <% @cocktails.each do |cocktail| %>
-          <li>
-            <%= link_to cocktail.name, cocktail_path(cocktail) %>
-          </li>
+        <li>
+          <%= link_to cocktail.name, cocktail_path(cocktail) %>
+
+          <div class="row">
+            <a class="link-card" href="/cocktails/1">
+              <div class="col-xs-12 col-sm-4">
+                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.com/photos/aj1B4wkOCpI/download?force=true')">
+                  <div class="card-description">
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </li>
         <% end %>
       </ul>
+    </div>
   </div>
-</div>
-
-<%=  link_to "Create now Cocktail", new_cocktail_path, class: "btn btn-primary btn-lg"%>
+</p>
+<%#=  link_to "Create now Cocktail", new_cocktail_path, class: "btn btn-primary btn-lg"%>
 <%#= link_to 'Create a new Cocktail', new_cocktail_path %>
-
 
 
 

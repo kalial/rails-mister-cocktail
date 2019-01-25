@@ -1,7 +1,8 @@
+<h2>Ingredients:</h2>
+<br>
 <p>
   <strong><%= @cocktail.name %></strong>
 </p>
-<h2>Ingredients:</h2>
 <ul>
   <% @cocktail.doses.each do |dose| %>
     <li>
@@ -9,6 +10,7 @@
     </li>
   <% end %>
 </ul>
+<%= cl_image_tag("brooke-lark-175184-unsplash", width: 400, height: 300, crop: :fill) %>
 
 <br>
 
@@ -18,4 +20,4 @@
 
 
 <%= link_to 'Home', cocktails_path %> <br>
-<%= link_to "Add a new doses", new_cocktail_dose_path(@cocktail) %>
+<%= link_to "Add a new doses", new_cocktail_dose_path(@cocktail) %>  <br>

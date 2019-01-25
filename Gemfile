@@ -7,7 +7,8 @@ ruby '2.4.4'
 gem 'dotenv-rails', groups: [:development, :test]
 
 # Cloudinary gem
-gem 'cloudinary'
+# gem 'cloudinary'
+gem 'cloudinary', '~> 1.9.1'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
