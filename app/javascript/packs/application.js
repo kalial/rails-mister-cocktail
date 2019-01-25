@@ -1,6 +1,6 @@
 import 'bootstrap';
-import 'select2/dist/css/select2.css';
-import { multipleSelect } from '../components/select2.js';
+// import 'select2/dist/css/select2.css';
+// import { multipleSelect } from '../components/select2.js';
 /* eslint no-console:0 */
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
