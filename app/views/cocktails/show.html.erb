@@ -1,18 +1,21 @@
 <p>
-  <strong>Name:</strong>
-  <%= @cocktail.name %>
+  <strong><%= @cocktail.name %></strong>
 </p>
-
-<%= link_to 'Home', cocktails_path %> <br>
-<%= link_to "Add a new doses", new_cocktail_dose_path(@cocktail) %>
-<p></p>
-
+<h2>Ingredients:</h2>
 <ul>
   <% @cocktail.doses.each do |dose| %>
-    <li> <%= dose.description %> <br> <%= dose.ingredient.name %> </li>
+    <li>
+      <%= dose.description %> <br> <%= dose.ingredient.name %>
+    </li>
   <% end %>
 </ul>
+
+<br>
 
 <%= link_to cocktail_path(@cocktail), method: :delete do %>
 <i class="fas fa-trash"></i> <!-- https://fontawesome.com/icons?d=gallery&q=delete -->
 <% end %>
+
+
+<%= link_to 'Home', cocktails_path %> <br>
+<%= link_to "Add a new doses", new_cocktail_dose_path(@cocktail) %>

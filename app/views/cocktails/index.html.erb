@@ -1,16 +1,26 @@
-<h1>Cocktails</h1>
-<p>Find me in app/views/cocktails/index.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 10%), url('https://unsplash.com/photos/fXkmfjaowOw');">
+  <div class="banner-content">
+    <p>test</p>
+  </div>
+</div>
 
-   <ul>
-    <% @cocktails.each do |cocktail| %>
-      <li>
-        <%= link_to cocktail.name, cocktail_path(cocktail) %>
-      </li>
-    <% end %>
-  </ul>
+<h1 id="cocktail_list" class="text-center">favourite cocktails</h1>
+<p>
+  <br>
+  <div class="container">
+    <div class="row">
+      <ul>
+        <% @cocktails.each do |cocktail| %>
+          <li>
+            <%= link_to cocktail.name, cocktail_path(cocktail) %>
+          </li>
+        <% end %>
+      </ul>
+  </div>
+</div>
 
-
-<%= link_to 'Create a new Cocktail', new_cocktail_path %>
+<%=  link_to "Create now Cocktail", new_cocktail_path, class: "btn btn-primary btn-lg"%>
+<%#= link_to 'Create a new Cocktail', new_cocktail_path %>
 
 
 
